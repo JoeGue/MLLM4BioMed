@@ -2,17 +2,17 @@
 
 This page collects multimodal and large-language-model methods for **ultrasound**, including multi-organ ultrasound assistants, echocardiography agents, breast-ultrasound report generation, and ultrasound VQA/reasoning models.
 
----
-
 ## Ultrasound Vision-Language Models
 
 | Model | Paper | Venue | Date |
 |---|---|---|---|
+| [UltraG-Agent](https://github.com/zhuqh19/UltraG-Bench) | UltraG-Bench: A Multi-task Benchmark for assessing Large Vision-Language Models on Pixel-level Evidence Grounding in Ultrasound | [arXiv](https://arxiv.org/abs/2609.30928) | 2026-09-25 |
+| [EchoVLM](https://github.com/Asunatan/EchoVLM) | EchoVLM: Dynamic Mixture-of-Experts Vision-Language Model for Universal Ultrasound Intelligence | [ACL](https://aclanthology.org/2026.acl-long.494/); [arXiv](https://arxiv.org/abs/2509.14977) | 2026-07 |
+| SonoCLIP | SonoCLIP: Mask-Guided Region-Aware Vision-Language Pretraining for Fetal Ultrasound Analysis | [arXiv](https://arxiv.org/abs/2606.29586) | 2026-06-28 |
 | Echo-alpha | Echo-alpha: An Agentic Multimodal Reasoning Model for Echocardiography | [arXiv](https://arxiv.org/abs/2604.25143) | 2026-04-30 |
 | EchoAgent | Reliable Echocardiography Interpretation with Vision-Language Models through Eyes, Hands and Minds | [arXiv](https://arxiv.org/abs/2604.05541) | 2026-04-07 |
 | MARCUS | MARCUS: Multimodal Autonomous Reasoning and Chat for Ultrasound and Signals | [arXiv](https://arxiv.org/abs/2603.22179) | 2026-03-27 |
 | Dolphin v1.0 | Dolphin: The First Large-Scale Multimodal Medical Ultrasound Model | [arXiv](https://arxiv.org/abs/2509.25748) | 2025-09-30 |
-| EchoVLM | EchoVLM: Dynamic Mixture-of-Experts Vision-Language Model for Universal Ultrasound Intelligence | [arXiv](https://arxiv.org/abs/2509.17174) | 2025-09-18 |
 | UTI-LLM | UTI-LLM: A Multimodal Large Language Model for Ultrasound Tongue Imaging Analysis | [arXiv](https://arxiv.org/abs/2509.13145) | 2025-09-16 |
 | ReMUD-7B | ReMUD-7B: Reasoning-Driven Multimodal Ultrasound Diagnosis via Large Language Model | [arXiv](https://arxiv.org/abs/2506.09131) | 2025-06-10 |
 | Ultrasound Report Generation MLLM | Multimodal Large Language Model for Standardized Bilingual Ultrasound Report Generation | [arXiv](https://arxiv.org/abs/2505.06812) | 2025-05-11 |

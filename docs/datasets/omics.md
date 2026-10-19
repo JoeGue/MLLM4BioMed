@@ -8,6 +8,7 @@ This page lists datasets used for training and evaluating models in **omics and 
 
 | Dataset | Modalities | Images | Text | Paper | Date | Tasks |
 |---|---|---|---|---|---|---|
+| [OmicsBench](https://github.com/SeedScientist/OmicsBench) | DNA, RNA, Protein, Text | — | 1,160 questions | [arXiv](https://arxiv.org/abs/2609.23435) | 2026-09-20 | sequence prediction, biological reasoning |
 | [NCBI Summary of Genes](https://zenodo.org/records/10833191) | scRNA-seq | 93k | — | [Nat. Biomed. Eng.](https://www.nature.com/articles/s41551-024-01284-6) | 2024-12-06 | Used by GenePT |
 | [B-cell Lymphoma](https://zenodo.org/record/7813151) | scRNA-seq | — | — | [Cell Discovery](https://www.nature.com/articles/s41421-023-00559-7) | 2023-06-12 | Used by GPTcelltype |
 | [Immune Tissue Dataset](https://www.tissueimmunecellatlas.org/) | scRNA-seq | 40k | — | [Science](https://www.science.org/doi/10.1126/science.abl5197) | 2022-05-13 | Raw data for Cell2Sentence |
@@ -22,5 +23,15 @@ This page lists datasets used for training and evaluating models in **omics and 
 | [GEO Repository](https://ngdc.cncb.ac.cn/databasecommons/database/id/424) | scRNA-seq | — | — | [NAR](https://academic.oup.com/nar/article/41/D1/D991/1067995) | 2012-11-26 | Used by CellWhisperer |
 
 ---
+
+## Benchmark papers awaiting data-release verification
+
+Data release pending verification; excluded from dataset counts.
+
+| Pending benchmark | Paper / date | Release status |
+|---|---|---|
+| GEO-OmicsQA | [Paper](https://arxiv.org/abs/2605.06728); 2026-05-07 | Data release / reuse terms pending verification |
+
+Counts are paper-reported; source images/videos may require separate access.
 
 Back to [README](../../README.md)

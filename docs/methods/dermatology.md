@@ -2,13 +2,12 @@
 
 This page collects multimodal large language models developed for **dermatology image understanding**, including skin lesion analysis and multimodal dermatological diagnosis.
 
----
-
 ## Dermatology Vision-Language Models
 
 | Model | Paper | Venue | Date |
 |---|---|---|---|
-| DermFM-Zero | A Vision-Language Foundation Model for Zero-shot Clinical Collaboration and Automated Concept Discovery in Dermatology | [arXiv](https://arxiv.org/abs/2602.10624) | 2026-02-11 |
+| [UniCon](https://github.com/wuchengyu123/UniCon) | Open-Linguistic Concept Unified Learning for Cross-Site Interpretable Dermatology Image Diagnosis | [arXiv](https://arxiv.org/abs/2608.03225); ACM MM | 2026-08-04 |
+| [DermFM-Zero](https://github.com/SiyuanYan1/DermFM-Zero) | A Vision-Language Foundation Model for Zero-shot Clinical Collaboration and Automated Concept Discovery in Dermatology | [arXiv](https://arxiv.org/abs/2602.10624) | 2026-02-11 |
 | DermoGPT | DermoGPT: Open Weights and Open Data for Morphology-Grounded Dermatological Reasoning MLLMs | [arXiv](https://arxiv.org/abs/2601.01868) | 2026-01-05 |
 | [PanDerm](https://github.com/SiyuanYan1/PanDerm) | A multimodal vision foundation model for clinical dermatology | [Nat. Med.](https://www.nature.com/articles/s41591-025-03747-y) | 2025-06-06 |
 | [SkinGPT-4](https://github.com/JoshuaChou2018/SkinGPT-4) | Pre-trained multimodal large language model enhances dermatological diagnosis using SkinGPT-4 | [Nat. Commun.](https://www.nature.com/articles/s41467-024-50043-3) | 2024-07-05 |

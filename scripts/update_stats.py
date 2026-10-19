@@ -7,81 +7,67 @@ repo_root = Path(__file__).resolve().parents[1]
 method_dir = repo_root / "docs/methods"
 dataset_dir = repo_root / "docs/datasets"
 commercial_file = repo_root / "docs/commercial.md"
-readme_file = repo_root / "README.md"
+agentic_file = method_dir / "agentic-ai.md"
 
-def count_table_rows(file):
-    total = 0
+
+def table_rows(file, first_column):
+    """Yield records only from tables with the requested first-column header."""
+    header = None
     for line in file.read_text().splitlines():
         line = line.strip()
         if not line.startswith("|") or not line.endswith("|"):
+            header = None
             continue
         cells = [cell.strip() for cell in line.strip("|").split("|")]
-        if not cells:
-            continue
         if all(re.fullmatch(r":?-+:?", cell) for cell in cells):
             continue
-        if cells[0] in {"Model", "Dataset", "Resource", "Category"}:
+        if header is None:
+            header = cells
             continue
-        total += 1
-    return total
+        if header[0] == first_column:
+            yield cells
+
+
+def count_table_rows(file, first_column="Model"):
+    return sum(1 for _ in table_rows(file, first_column))
+
 
 def count_models():
-    total = 0
-    for f in method_dir.glob("*.md"):
-        total += count_table_rows(f)
-    return total
+    # Every method category uses Model rows, including Agentic AI.
+    return sum(count_table_rows(f) for f in method_dir.glob("*.md"))
+
 
 def count_datasets():
     total = 0
     for f in dataset_dir.glob("*.md"):
-        total += count_table_rows(f)
+        total += count_table_rows(f, "Dataset")
     return total
+
 
 def count_commercial():
-    total = 0
-    for line in commercial_file.read_text().splitlines():
-        line = line.strip()
-        if not line.startswith("|") or not line.endswith("|"):
-            continue
-        cells = [cell.strip() for cell in line.strip("|").split("|")]
-        if len(cells) < 4 or cells[0] in {"Family", "---"}:
-            continue
-        for cell in (cells[2], cells[3]):
-            items = [item.strip() for item in cell.split("<br>")]
-            total += sum(1 for item in items if item and item != "—")
-    return total
+    models = []
+    for cells in table_rows(commercial_file, "Family"):
+        for entry in cells[2].split("<br>"):
+            entry = entry.strip()
+            if entry and entry != "—":
+                name = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", entry)
+                models.append(name.casefold())
+    if len(models) != len(set(models)):
+        raise RuntimeError("Duplicate current model in docs/commercial.md")
+    return len(models)
 
-def update_readme(stats):
-    text = readme_file.read_text()
-    replacements = {
-        "Biomedical MLLM Models": stats["models"],
-        "Biomedical Datasets": stats["datasets"],
-        "Commercial Models": stats["commercial_models"],
+
+def main():
+    stats = {
+        "models": count_models(),
+        "datasets": count_datasets(),
+        "commercial_models": count_commercial(),
+        "agentic_ai": count_table_rows(agentic_file),
     }
-    updated = text
-    for label, value in replacements.items():
-        updated, count = re.subn(
-            rf"(\| {re.escape(label)} \| )\d+(\s*\|)",
-            rf"\g<1>{value}\g<2>",
-            updated,
-            count=1,
-        )
-        if count not in {0, 1}:
-            raise RuntimeError(f"Could not update {label} in README.md")
-    if updated != text:
-        readme_file.write_text(updated)
+    output = repo_root / "docs/stats.json"
+    output.write_text(json.dumps(stats, indent=2) + "\n")
+    print("Updated stats:", stats)
 
-stats = {
-    "models": count_models(),
-    "datasets": count_datasets(),
-    "commercial_models": count_commercial()
-}
 
-output = repo_root / "docs/stats.json"
-
-with open(output, "w") as f:
-    json.dump(stats, f, indent=2)
-
-update_readme(stats)
-
-print("Updated stats:", stats)
+if __name__ == "__main__":
+    main()

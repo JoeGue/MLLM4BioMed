@@ -13,6 +13,7 @@ A curated and actively maintained resource hub for
 
 [📄 Survey Paper](https://www.techrxiv.org/users/1032090/articles/1391925-multimodal-large-language-models-in-biomedicine-and-healthcare) •
 [📚 Methods](#methods) •
+[🤖 Agentic AI](docs/methods/agentic-ai.md) •
 [🧪 Datasets](#datasets) •
 [💼 Commercial Models](#commercial-models) •
 [🧾 Citation](#citation)
@@ -59,6 +60,7 @@ This repository aims to serve as a **centralized reference hub** for researchers
 
 # Update News
 
+- **2026-10-19** — Added **Agentic AI**.
 - **2026-05-21** — Added **audio, ehr MLLM** methods and datasets
 - **2026-05-20** — Updated the new version of **MLLM4BioMed**
 - **2025-11-11** — Updated the 1st version of **MLLM4BioMed**
@@ -71,7 +73,7 @@ More updates:
 
 # Methods
 
-Biomedical multimodal models are categorized according to **application domain**.
+Biomedical multimodal models are categorized according to **application domain**, with a cross-domain category for **Agentic AI**.
 
 ## Image-based Biomedical Models
 
@@ -113,6 +115,14 @@ These models include both:
 
 - domain-specific medical models
 - cross-domain biomedical multimodal foundation models
+
+## Agentic AI
+
+| Category | Link |
+|---|---|
+| Biomedical Agentic Methods, Benchmarks, and Foundations | [docs/methods/agentic-ai.md](docs/methods/agentic-ai.md) |
+
+This category covers tool use, database verification, adaptive diagnostic workflows, and biomedical research agents. It distinguishes biomedical methods from evaluation benchmarks and foundational reasoning papers.
 
 ---
 
